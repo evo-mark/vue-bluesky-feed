@@ -1,0 +1,36 @@
+{
+    "name": "@evomark/vue-bluesky-feed",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "type": "module",
+    "exports": {
+        ".": "./dist/main.js",
+        "./tailwind": "./dist/tailwind.js"
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "dev": "vite build --mode=development --watch",
+        "build": "vite build",
+        "demo": "pnpm --filter=demo run dev",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
+    "peerDependencies": {
+        "vue": "^3.5.0"
+    },
+    "devDependencies": {
+        "@atproto/api": "^0.13.18",
+        "@vitejs/plugin-vue": "^5.2.1",
+        "hls.js": "^1.5.17",
+        "typescript": "^5.7.2",
+        "vite": "^6.0.1",
+        "vue": "^3.5.13",
+        "vue3-slide-up-down": "^2.1.0"
+    }
+}
