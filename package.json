@@ -1,5 +1,9 @@
 {
     "name": "@evomark/vue-bluesky-feed",
+    "publishConfig": {
+        "access": "public",
+        "registry": "https://registry.npmjs.org/"
+    },
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
@@ -20,7 +24,15 @@
         "lint": "eslint src",
         "prettier": "npx prettier ./src --write"
     },
-    "keywords": [],
+    "keywords": [
+        "social",
+        "bluesky",
+        "feeds",
+        "vue",
+        "media",
+        "posts",
+        "widget"
+    ],
     "contributors": [
         {
             "name": "Craig Riley",
@@ -34,6 +46,10 @@
         }
     ],
     "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/evo-mark/vue-bluesky-feed.git"
+    },
     "packageManager": "pnpm@9.12.3+sha512.cce0f9de9c5a7c95bef944169cc5dfe8741abfb145078c0d508b868056848a87c81e626246cb60967cbd7fd29a6c062ef73ff840d96b3c86c40ac92cf4a813ee",
     "peerDependencies": {
         "vue": "^3.5.0"
