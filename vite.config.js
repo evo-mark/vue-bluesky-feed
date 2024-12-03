@@ -7,7 +7,7 @@ export default defineConfig({
 	build: {
 		lib: {
 			formats: ["es"],
-			entry: ["./src/main.ts", "./src/plugins/tailwind.ts"],
+			entry: ["./src/main.ts", "./src/plugins/tailwind.ts", "./src/style.postcss"],
 		},
 		target: "esnext",
 		rollupOptions: {

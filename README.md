@@ -46,15 +46,23 @@ pnpm add @evomark/vue-bluesky-feed
 
 ## Setup
 
-### tailwind.config.js
+#### EITHER: As part of a Tailwind-powered app
 
 ```js
+// tailwind.config.js
 import blueskyTailwind from "@evomark/vue-bluesky-feed/tailwind";
 
 export default {
-  content: [...blueskyTailwind()],
-  // ...
+	content: [...blueskyTailwind()],
+	// ...
 };
+```
+
+#### OR: As part of a non-Tailwind app
+
+```js
+// entry-file.js
+import "@evomark/vue-bluesky-feed/style";
 ```
 
 ### Vue Component
@@ -65,13 +73,13 @@ import { VueBlueskyFeed } from "@evomark/vue-bluesky-feed";
 
 ```html
 <template>
-  <VueBlueskyFeed
-    username="evanyou.me"
-    limit="5"
-    load-more
-    link-class="underline text-red-600"
-    post-avatar-class="size-14 rounded"
-  />
+	<VueBlueskyFeed
+		username="evanyou.me"
+		limit="5"
+		load-more
+		link-class="underline text-red-600"
+		post-avatar-class="size-14 rounded"
+	/>
 </template>
 ```
 
@@ -81,65 +89,63 @@ Full documentation coming soon, for now, here's the prop types
 
 ```ts
 interface ComponentProps {
-  // Generate a feed from a username
-  username?: string;
-  // Generate a feed by name
-  feed?: string;
-  // Generate a feed from a search term
-  search?: string;
-  // Max no. of feed posts per request
-  limit?: number;
-  linkTarget?: "_self" | "_blank" | "_parent" | "_top";
-  // Link to images rather than showing in modal
-  linkImage?: boolean;
+	// Generate a feed from a username
+	username?: string;
+	// Generate a feed by name
+	feed?: string;
+	// Generate a feed from a search term
+	search?: string;
+	// Max no. of feed posts per request
+	limit?: number;
+	linkTarget?: "_self" | "_blank" | "_parent" | "_top";
+	// Link to images rather than showing in modal
+	linkImage?: boolean;
 
-  // Render a button to load more posts
-  loadMore?: boolean;
-  // Element to attach the modal to
-  attach?: HTMLElement;
-  // Use compact mode, where additional content is hidden initially
-  compact: boolean;
+	// Render a button to load more posts
+	loadMore?: boolean;
+	// Element to attach the modal to
+	attach?: HTMLElement;
+	// Use compact mode, where additional content is hidden initially
+	compact: boolean;
 
-  class: string;
-  loadMoreClass: string;
-  modalBackdropClass: string;
-  modalCloseButtonClass: string;
-  modalClass: string;
-  linkClass: string;
+	class: string;
+	loadMoreClass: string;
+	modalBackdropClass: string;
+	modalCloseButtonClass: string;
+	modalClass: string;
+	linkClass: string;
 
-  compactToggleClass: string;
-  postClass: string;
-  postHeaderClass: string;
-  postUserLinkClass: string;
-  postUsernameClass: string;
-  postUserHandleClass: string;
-  postTimestampClass: string;
-  postAvatarClass: string;
-  postVideoClass: string;
-  postCardAvatarClass: string;
-  postTextContentClass: string;
-  postCardClass: string;
-  postCardThumbnailClass: string;
-  postCardHostClass: string;
-  postCardTitleClass: string;
-  postCardDescriptionClass: string;
-  postReplyClass: string;
-  postImageGridClass: string;
-  repostClass: string;
-  repostTextClass: string;
+	compactToggleClass: string;
+	postClass: string;
+	postHeaderClass: string;
+	postUserLinkClass: string;
+	postUsernameClass: string;
+	postUserHandleClass: string;
+	postTimestampClass: string;
+	postAvatarClass: string;
+	postVideoClass: string;
+	postCardAvatarClass: string;
+	postTextContentClass: string;
+	postCardClass: string;
+	postCardThumbnailClass: string;
+	postCardHostClass: string;
+	postCardTitleClass: string;
+	postCardDescriptionClass: string;
+	postReplyClass: string;
+	postImageGridClass: string;
+	repostClass: string;
+	repostTextClass: string;
 
-  loadingPostClass: string;
-  loadingPostAvatarClass: string;
-  loadingPostHeadlineClass: string;
-  // Class for each line of the post when loading
-  loadingPostLineClass: string;
-  // Number of lines to represent the post in a loading skeleton
-  loadingPostLines: number;
+	loadingPostClass: string;
+	loadingPostAvatarClass: string;
+	loadingPostHeadlineClass: string;
+	// Class for each line of the post when loading
+	loadingPostLineClass: string;
+	// Number of lines to represent the post in a loading skeleton
+	loadingPostLines: number;
 }
 ```
-
 
 ## Roadmap
 
 - The bundle size is currently too large due to @atproto/api dependencies, investigate ways to reduce
-- Provide a build package with Tailwind class already included, making it optional in the consuming app
